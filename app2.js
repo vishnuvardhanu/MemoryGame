@@ -82,13 +82,18 @@ function compare(card){
     else
     { 
         console.log("not same");
+         score--;
         clickedcard.forEach(card => {
             card.classList.remove("rotate");
         });
     }
     scr.innerText=`Score: ${score}`;
     if(score==150)
-    reset();
+    {
+        setTimeout(()=>{
+            reset();
+        },5000);
+     }
 }
 
 let clickedcard=[];
